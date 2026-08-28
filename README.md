@@ -1,4 +1,4 @@
-# 16-825 Assignment 1: Rendering Basics with PyTorch3D (Total: 100 Points + 10 Bonus)
+# 16-825 Assignment 1: Rendering Basics with PyTorch3D (Total: 90 Base Points + 20 Extra Credit)
 
 Goals: In this assignment, you will learn the basics of rendering with PyTorch3D,
 explore 3D representations, and practice constructing simple geometry.
@@ -12,8 +12,8 @@ You may also find it helpful to follow the [Pytorch3D tutorials](https://github.
 3. [Re-texturing a mesh](#3-re-texturing-a-mesh-10-points) (10 Points)
 4. [Camera Transformations](#4-camera-transformations-10-points) (10 Points)
 5. [Rendering Generic 3D Representations](#5-rendering-generic-3d-representations) (45 Points)
-6. [Do Something Fun](#6-do-something-fun-10-points) (10 Points)
-7. [Extra Credit](#extra-credit-7-sampling-points-on-meshes-10-points) (10 Points)
+6. [Do Something Fun](#extra-credit-6-do-something-fun-10-points) (+10 Extra Credit)
+7. [Sampling Points on Meshes](#extra-credit-7-sampling-points-on-meshes-10-points) (+10 Extra Credit)
 
 ## 0. Setup
 
@@ -50,6 +50,8 @@ MAX_JOBS=8 pip install "git+https://github.com/facebookresearch/pytorch3d.git@st
 pip install -r requirements.txt
 
 ```
+
+> If the PyTorch3D install fails with `ModuleNotFoundError: No module named 'torch'`, retry the install with `--no-build-isolation`.
 
 Make sure that you have gcc $\ge$ 4.9.
 
@@ -369,7 +371,7 @@ ease of use, memory usage, etc. (5 points)
 
 ****
 
-## 6. Do Something Fun (10 points)
+## (Extra Credit) 6. Do Something Fun (+10 points)
 
 Now that you have learned to work with various 3D represenations and render them, it
 is time to try something fun. Create your own 3D structures, or render something in an interesting way,
