@@ -12,7 +12,7 @@ from starter.utils import get_device, get_mesh_renderer
 
 
 def render_textured_cow(
-    cow_path="data/cow.obj",
+    cow_path="../data/cow.obj",
     image_size=256,
     R_relative=[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
     T_relative=[0, 0, 0],
@@ -36,9 +36,9 @@ def render_textured_cow(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cow_path", type=str, default="data/cow.obj")
+    parser.add_argument("--cow_path", type=str, default="../data/cow.obj")
     parser.add_argument("--image_size", type=int, default=256)
-    parser.add_argument("--output_path", type=str, default="images/textured_cow.jpg")
+    parser.add_argument("--output_path", type=str, default="../images/textured_cow.jpg")
     args = parser.parse_args()
     render_textured_cow(cow_path=args.cow_path, image_size=args.image_size)
     plt.imsave(args.output_path, render_textured_cow())

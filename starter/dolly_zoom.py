@@ -32,10 +32,15 @@ def dolly_zoom(
 
     fovs = torch.linspace(5, 120, num_frames)
 
+    ref_fov = 5.0
+    ref_distance = 50.0
+
     renders = []
     for fov in tqdm(fovs):
-        distance = 3  # TODO: change this.
-        T = [[0, 0, 3]]  # TODO: Change this.
+        distance = ref_distance * torch.tan(torch.deg2rad(torch.tensor(ref_fov / 2)) /
+                                            torch.tan(torch.deg2rad(fov / 2)))
+        T = [[0, 0, distance.item()]]
+
         cameras = pytorch3d.renderer.FoVPerspectiveCameras(fov=fov, T=T, device=device)
         rend = renderer(mesh, cameras=cameras, lights=lights)
         rend = rend[0, ..., :3].cpu().numpy()  # (N, H, W, 3)

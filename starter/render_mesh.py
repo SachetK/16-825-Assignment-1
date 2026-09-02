@@ -14,7 +14,7 @@ from starter.utils import get_device, get_mesh_renderer, load_cow_mesh
 
 
 def render_cow(
-    cow_path="data/cow.obj", image_size=256, color=[0.7, 0.7, 1], device=None,
+    cow_path="../data/cow.obj", image_size=256, color=[0.7, 0.7, 1], device=None,
 ):
     # The device tells us whether we are rendering with GPU or CPU. The rendering will
     # be *much* faster if you have a CUDA-enabled NVIDIA GPU. However, your code will
@@ -56,8 +56,8 @@ def render_cow(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cow_path", type=str, default="data/cow.obj")
-    parser.add_argument("--output_path", type=str, default="images/cow_render.jpg")
+    parser.add_argument("--cow_path", type=str, default="../data/cow.obj")
+    parser.add_argument("--output_path", type=str, default="../images/cow_render.jpg")
     parser.add_argument("--image_size", type=int, default=256)
     args = parser.parse_args()
     image = render_cow(cow_path=args.cow_path, image_size=args.image_size)
