@@ -16,7 +16,7 @@ def render_turntables(point_clouds, renderer, num_frames):
     device = point_clouds.device
     for azim in np.linspace(0, 360, num_frames, endpoint=False):
         R, T = pytorch3d.renderer.look_at_view_transform(
-            dist=6, elev=15, azim=azim, device=device
+            dist=6, elev=15, azim=azim, up=((0, -1, 0),), device=device
         )
         camera = pytorch3d.renderer.FoVPerspectiveCameras(
             R=R.expand(len(point_clouds), -1, -1),
